@@ -1,4 +1,4 @@
-
+transaction=[]
 def show_menu():
     print("\n===== Personal Finance Tracker =====")
     print("1.Add Income")
@@ -7,13 +7,25 @@ def show_menu():
     print("4.Exit")
 
 def add_income():
-    print("Income feature coming soon...")
+   income=int(input("Enter Income Amount:"))
+   income_store= f"Income : {income}"
+   transaction.append(income_store)
 
 def add_expence():
-    print("Expense feature coming soon...")
+    expense=int(input("Enter Expense Amount: "))
+    expense_store = f"Expense: {expense}"
+    transaction.append(expense_store)
 
 def view_transaction():
-    print("Show transactions message")
+    if len(transaction)==0:
+        print("No transaction found")
+    else:
+        print("\nTransaction")
+        print("============")
+    
+    for i in transaction:
+        print(i)
+
 
 
 while True:
